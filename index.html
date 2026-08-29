@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toad Whale | $TOADWHALE</title>
+  <meta name="description" content="Toad Whale brings giant frog vibes, ocean-sized memes, and unstoppable Solana energy. Dive in and buy $TOADWHALE." />
+  <meta property="og:title" content="Toad Whale | $TOADWHALE" />
+  <meta property="og:description" content="Giant frog vibes, ocean-sized memes, and unstoppable Solana energy." />
+  <meta property="og:image" content="banner.jpg" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            abyss: "#011018",
+            deep: "#021e33",
+            ocean: "#0a4f7c",
+            surface: "#1aa0d6",
+            frog: "#8be14a",
+            frogdim: "#6bc22e",
+            foam: "#e9f8ff",
+            whale: "#4d82b5",
+            slatewhale: "#3d6a94",
+          },
+          fontFamily: {
+            display: ["Bungee", "cursive"],
+            round: ["Fredoka", "sans-serif"],
+            body: ["Nunito", "sans-serif"],
+          },
+          boxShadow: {
+            glow: "0 0 40px rgba(139, 225, 74, 0.45)",
+            glowsm: "0 0 22px rgba(139, 225, 74, 0.35)",
+            ocean: "0 20px 60px rgba(0, 40, 80, 0.55)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --frog: #8be14a;
+      --frog-deep: #5aa61e;
+      --abyss: #011018;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Nunito", sans-serif;
+      background: #011018;
+      color: #e9f8ff;
+      overflow-x: hidden;
+    }
+
+    .ocean-bg {
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(26, 160, 214, 0.28), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(139, 225, 74, 0.08), transparent 55%),
+        radial-gradient(800px 700px at 10% 80%, rgba(10, 79, 124, 0.5), transparent 60%),
+        linear-gradient(180deg, #03263f 0%, #021624 38%, #010d16 100%);
+    }
+
+    .rays {
+      background: repeating-conic-gradient(
+        from 8deg at 50% -8%,
+        rgba(255, 255, 255, 0.045) 0deg 3deg,
+        transparent 3deg 11deg
+      );
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 72%);
+      animation: rayDrift 28s linear infinite;
+    }
+
+    @keyframes rayDrift {
+      from { transform: rotate(0deg) scale(1.15); }
+      to { transform: rotate(12deg) scale(1.15); }
+    }
+
+    .caustics {
+      background:
+        radial-gradient(ellipse 40% 18% at 20% 10%, rgba(180, 240, 255, 0.12), transparent 70%),
+        radial-gradient(ellipse 30% 14% at 70% 18%, rgba(139, 225, 74, 0.08), transparent 70%),
+        radial-gradient(ellipse 50% 20% at 45% 0%, rgba(255, 255, 255, 0.08), transparent 70%);
+      animation: causticShift 10s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes causticShift {
+      from { opacity: 0.55; transform: translateX(-2%) scale(1); }
+      to { opacity: 1; transform: translateX(2%) scale(1.04); }
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), rgba(180, 230, 255, 0.08) 45%, rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      animation: rise linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      8% { opacity: 0.7; }
+      100% { transform: translateY(-110vh) scale(1.15); opacity: 0; }
+    }
+
+    .swim {
+      animation: swim 6s ease-in-out infinite;
+    }
+
+    @keyframes swim {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-16px) rotate(2deg); }
+    }
+
+    .float-slow {
+      animation: floatSlow 8s ease-in-out infinite;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .pulse-ring {
+      animation: pulseRing 2.4s ease-out infinite;
+    }
+
+    @keyframes pulseRing {
+      0% { transform: scale(1); opacity: 0.55; }
+      100% { transform: scale(1.35); opacity: 0; }
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(8, 40, 64, 0.72), rgba(2, 18, 32, 0.82));
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(139, 225, 74, 0.18);
+    }
+
+    .glass-nav {
+      background: rgba(1, 16, 24, 0.55);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(139, 225, 74, 0.12);
+    }
+
+    .glass-nav.scrolled {
+      background: rgba(1, 16, 24, 0.88);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .title-glow {
+      background: linear-gradient(180deg, #f4ffe8 0%, #8be14a 48%, #4db8e8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 8px 24px rgba(139, 225, 74, 0.35));
+    }
+
+    .porthole {
+      box-shadow:
+        0 0 0 8px #1c4e72,
+        0 0 0 12px #8be14a,
+        0 0 0 18px #0b2c44,
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(139, 225, 74, 0.25);
+    }
+
+    .wave-top {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+
+    .btn-frog {
+      background: linear-gradient(180deg, #b6f56d 0%, #8be14a 42%, #5db922 100%);
+      color: #062014;
+      box-shadow: 0 8px 0 #3d8614, 0 12px 28px rgba(139, 225, 74, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-frog:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 #3d8614, 0 16px 32px rgba(139, 225, 74, 0.45);
+    }
+
+    .btn-frog:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #3d8614, 0 6px 16px rgba(139, 225, 74, 0.25);
+    }
+
+    .btn-chart {
+      background: linear-gradient(180deg, rgba(26, 160, 214, 0.35), rgba(8, 50, 80, 0.7));
+      border: 2px solid rgba(139, 225, 74, 0.55);
+      color: #e9f8ff;
+      box-shadow: 0 8px 0 #0a3a58, 0 12px 28px rgba(0, 40, 80, 0.4);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-chart:hover {
+      transform: translateY(-2px);
+      border-color: #8be14a;
+    }
+
+    .btn-chart:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #0a3a58;
+    }
+
+    .depth-line::before {
+      content: "";
+      position: absolute;
+      left: 27px;
+      top: 64px;
+      bottom: -28px;
+      width: 3px;
+      background: linear-gradient(180deg, #8be14a, rgba(26, 160, 214, 0.2));
+      border-radius: 999px;
+    }
+
+    .depth-line:last-child::before { display: none; }
+
+    .sonar-frame {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(139, 225, 74, 0.06), transparent 60%),
+        linear-gradient(180deg, rgba(4, 30, 48, 0.95), rgba(1, 14, 24, 0.98));
+      border: 2px solid rgba(139, 225, 74, 0.28);
+      box-shadow:
+        inset 0 0 80px rgba(10, 80, 120, 0.25),
+        0 0 40px rgba(139, 225, 74, 0.12);
+    }
+
+    .toast {
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.28s ease;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .whale-sil {
+      animation: whalePass 32s linear infinite;
+    }
+
+    @keyframes whalePass {
+      0% { transform: translateX(-20%) translateY(0); opacity: 0; }
+      8% { opacity: 0.18; }
+      50% { transform: translateX(40vw) translateY(-12px); opacity: 0.22; }
+      92% { opacity: 0.12; }
+      100% { transform: translateX(110vw) translateY(8px); opacity: 0; }
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: #8be14a;
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover::after { width: 100%; }
+
+    .step-card:hover .step-num {
+      transform: scale(1.08) rotate(-6deg);
+    }
+
+    .grain {
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .swim, .float-slow, .rays, .caustics, .marquee-track, .bubble, .pulse-ring, .whale-sil {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="ocean-bg font-body">
+  <div id="bubbles" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
+  <div class="grain fixed inset-0 z-0"></div>
+
+  <svg class="whale-sil fixed top-[38%] w-64 md:w-96 text-white z-0 pointer-events-none" viewBox="0 0 240 90" fill="currentColor" aria-hidden="true">
+    <path d="M12 52c18-22 48-34 86-32 28 1 48 10 72 8 14-1 28-8 42-6-8 10-8 20 2 30-16 2-30-4-46-2-22 3-38 14-64 16-30 3-62-2-86-10 4-6 2-10-6-14z"/>
+    <circle cx="38" cy="44" r="3"/>
+  </svg>
+
+  <nav id="nav" class="glass-nav fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Toad Whale logo" class="w-12 h-12 rounded-full object-cover porthole-sm ring-2 ring-frog shadow-glowsm" />
+        <div class="leading-tight">
+          <p class="font-display text-sm md:text-base tracking-wide text-foam">TOAD WHALE</p>
+          <p class="text-[11px] font-round text-frog">$TOADWHALE</p>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-round font-medium text-foam/80">
+        <a href="#about" class="nav-link hover:text-frog">The Legend</a>
+        <a href="#howtobuy" class="nav-link hover:text-frog">How to Buy</a>
+        <a href="#chart" class="nav-link hover:text-frog">Chart</a>
+        <a href="#community" class="nav-link hover:text-frog">Pod</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://t.me/ToadWhaleSol" target="_blank" rel="noopener noreferrer" class="hidden sm:block hover:scale-110 transition" aria-label="Telegram">
+          <img src="tg.png" alt="Telegram" class="w-9 h-9 rounded-full" />
+        </a>
+        <a href="https://x.com/ToadWhaleSol" target="_blank" rel="noopener noreferrer" class="hidden sm:block hover:scale-110 transition" aria-label="X">
+          <img src="x.png" alt="X / Twitter" class="w-9 h-9 rounded-full object-cover" />
+        </a>
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-frog hidden sm:inline-flex items-center rounded-full px-5 py-2 font-round font-bold text-sm">
+          Buy Now
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 rounded-full border border-frog/40 flex items-center justify-center" aria-label="Open menu">
+          <span class="block w-5 h-0.5 bg-frog relative before:content-[''] before:absolute before:-top-1.5 before:left-0 before:w-5 before:h-0.5 before:bg-frog after:content-[''] after:absolute after:top-1.5 after:left-0 after:w-5 after:h-0.5 after:bg-frog"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+      <div class="glass rounded-2xl p-4 flex flex-col gap-3 font-round">
+        <a href="#about" class="py-2 text-foam hover:text-frog">The Legend</a>
+        <a href="#howtobuy" class="py-2 text-foam hover:text-frog">How to Buy</a>
+        <a href="#chart" class="py-2 text-foam hover:text-frog">Chart</a>
+        <a href="#community" class="py-2 text-foam hover:text-frog">Pod</a>
+        <div class="flex items-center gap-3 pt-2">
+          <a href="https://t.me/ToadWhaleSol" target="_blank" rel="noopener noreferrer"><img src="tg.png" alt="Telegram" class="w-9 h-9 rounded-full" /></a>
+          <a href="https://x.com/ToadWhaleSol" target="_blank" rel="noopener noreferrer"><img src="x.png" alt="X" class="w-9 h-9 rounded-full object-cover" /></a>
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-frog rounded-full px-5 py-2 font-bold text-sm ml-auto">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="relative min-h-screen flex items-end md:items-center pt-24 pb-16 overflow-hidden">
+    <img src="banner.jpg" alt="Toad Whale swimming through a coral reef" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-r from-abyss/85 via-abyss/55 to-abyss/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-abyss via-abyss/40 to-transparent"></div>
+    <div class="rays absolute inset-0"></div>
+    <div class="caustics absolute inset-0"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 w-full grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-frog/40 bg-abyss/40 px-3 py-1 mb-5 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-frog animate-pulse"></span>
+          <span class="text-xs font-round tracking-widest uppercase text-frog">Live on Solana</span>
+        </div>
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] title-glow mb-4">
+          TOAD<br />WHALE
+        </h1>
+        <p class="inline-block font-round font-semibold text-frog bg-frog/10 border border-frog/30 rounded-full px-4 py-1 mb-5 tracking-widest">
+          $TOADWHALE
+        </p>
+        <p class="text-lg md:text-xl text-foam/90 max-w-xl leading-relaxed mb-8">
+          Toad Whale brings giant frog vibes, ocean-sized memes, and unstoppable Solana energy.
+        </p>
+
+        <div class="glass rounded-2xl p-3 sm:p-4 mb-8 max-w-xl">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-frog/80 font-round mb-2">Contract Address</p>
+          <div class="flex items-center gap-2">
+            <code id="caText" class="flex-1 font-mono text-sm sm:text-base text-foam break-all">TBA</code>
+            <button id="copyBtn" class="shrink-0 btn-frog rounded-xl px-3 py-2 font-round font-bold text-xs sm:text-sm flex items-center gap-1.5" type="button">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke-width="2"/></svg>
+              Copy CA
+            </button>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-frog rounded-2xl px-8 py-4 font-round font-bold text-lg text-center">
+            Buy Now
+          </a>
+          <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="btn-chart rounded-2xl px-8 py-4 font-round font-bold text-lg text-center">
+            Chart
+          </a>
+        </div>
+      </div>
+
+      <div class="relative flex justify-center md:justify-end">
+        <div class="absolute w-72 h-72 md:w-[420px] md:h-[420px] rounded-full bg-frog/20 blur-3xl"></div>
+        <div class="absolute w-80 h-80 md:w-[380px] md:h-[380px] rounded-full border border-frog/20 pulse-ring"></div>
+        <img src="logo.png" alt="Toad Whale mascot" class="relative w-64 sm:w-80 md:w-[380px] rounded-full object-cover porthole swim" />
+      </div>
+    </div>
+  </header>
+
+  <div class="relative z-10 -mt-1 overflow-hidden border-y border-frog/20 bg-abyss/80">
+    <div class="marquee-track py-3 font-display text-sm tracking-widest text-frog/90">
+      <span class="px-6">TOAD WHALE</span><span class="text-surface">•</span>
+      <span class="px-6">$TOADWHALE</span><span class="text-surface">•</span>
+      <span class="px-6">GIANT FROG VIBES</span><span class="text-surface">•</span>
+      <span class="px-6">OCEAN-SIZED MEMES</span><span class="text-surface">•</span>
+      <span class="px-6">UNSTOPPABLE SOLANA ENERGY</span><span class="text-surface">•</span>
+      <span class="px-6">RIBBIT. BREACH. MOON.</span><span class="text-surface">•</span>
+      <span class="px-6">TOAD WHALE</span><span class="text-surface">•</span>
+      <span class="px-6">$TOADWHALE</span><span class="text-surface">•</span>
+      <span class="px-6">GIANT FROG VIBES</span><span class="text-surface">•</span>
+      <span class="px-6">OCEAN-SIZED MEMES</span><span class="text-surface">•</span>
+      <span class="px-6">UNSTOPPABLE SOLANA ENERGY</span><span class="text-surface">•</span>
+      <span class="px-6">RIBBIT. BREACH. MOON.</span><span class="text-surface">•</span>
+    </div>
+  </div>
+
+  <section id="about" class="relative py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="text-center mb-14">
+        <p class="font-round text-frog tracking-[0.25em] uppercase text-xs mb-3">The Legend</p>
+        <h2 class="font-display text-3xl md:text-5xl title-glow">Meet the Pod Leader</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-foam/80 text-lg">
+          Not a fish. Not just a frog. A deep-sea meme leviathan born to breach the charts.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="glass rounded-3xl p-7 float-slow">
+          <div class="w-14 h-14 rounded-2xl bg-frog/15 border border-frog/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-frog" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c2 0 3 1.4 3 3S13.2 8 12 8 9 7.4 9 6s1-3 3-3zm-7 9c2.2-3 5-4.5 7-4.5S16.8 9 19 12c-1.2 3.5-3.8 6.5-7 8-3.2-1.5-5.8-4.5-7-8z"/></svg>
+          </div>
+          <h3 class="font-round font-bold text-xl text-frog mb-2">Giant Frog Vibes</h3>
+          <p class="text-foam/75 leading-relaxed">Rare Pepe energy fused with a blue whale body. The face that launched a thousand memes, now swimming Solana waters.</p>
+        </article>
+
+        <article class="glass rounded-3xl p-7 float-slow" style="animation-delay: 0.4s">
+          <div class="w-14 h-14 rounded-2xl bg-frog/15 border border-frog/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-frog" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13c4-6 14-6 18 0-4 6-14 6-18 0zm9-3.5A2.5 2.5 0 1 0 12 14a2.5 2.5 0 0 0 0-4.5z"/></svg>
+          </div>
+          <h3 class="font-round font-bold text-xl text-frog mb-2">Ocean-Sized Memes</h3>
+          <p class="text-foam/75 leading-relaxed">When this whale breaches, the timeline floods. Bigger laughs, bigger bags, bigger splash than any tadpole token.</p>
+        </article>
+
+        <article class="glass rounded-3xl p-7 float-slow" style="animation-delay: 0.8s">
+          <div class="w-14 h-14 rounded-2xl bg-frog/15 border border-frog/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-frog" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12l8-8 8 8-8 8-8-8zm8-4.5L7.5 12 12 16.5 16.5 12 12 7.5z"/></svg>
+          </div>
+          <h3 class="font-round font-bold text-xl text-frog mb-2">Unstoppable Energy</h3>
+          <p class="text-foam/75 leading-relaxed">Born on Solana. Fast, cheap, and built to migrate from the reef to the open ocean. The pod does not stop swimming.</p>
+        </article>
+      </div>
+
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="glass rounded-2xl p-5 text-center">
+          <p class="text-[11px] uppercase tracking-widest text-frog/70 font-round">Name</p>
+          <p class="font-round font-bold text-lg mt-1">Toad Whale</p>
+        </div>
+        <div class="glass rounded-2xl p-5 text-center">
+          <p class="text-[11px] uppercase tracking-widest text-frog/70 font-round">Symbol</p>
+          <p class="font-round font-bold text-lg mt-1">$TOADWHALE</p>
+        </div>
+        <div class="glass rounded-2xl p-5 text-center">
+          <p class="text-[11px] uppercase tracking-widest text-frog/70 font-round">Chain</p>
+          <p class="font-round font-bold text-lg mt-1">Solana</p>
+        </div>
+        <div class="glass rounded-2xl p-5 text-center">
+          <p class="text-[11px] uppercase tracking-widest text-frog/70 font-round">Launch</p>
+          <p class="font-round font-bold text-lg mt-1">Pump.fun</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="howtobuy" class="relative py-20 md:py-28">
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-frog/40 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="text-center mb-14">
+        <p class="font-round text-frog tracking-[0.25em] uppercase text-xs mb-3">Dive Sequence</p>
+        <h2 class="font-display text-3xl md:text-5xl title-glow">How to Buy</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-foam/80 text-lg">
+          Four depths. One destination. Grab SOL and join the Toad Whale pod.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <article class="step-card glass rounded-3xl p-6 relative md:depth-line">
+          <div class="flex items-center justify-between mb-6">
+            <span class="step-num font-display text-4xl text-frog transition">01</span>
+            <span class="text-[11px] font-round tracking-widest uppercase text-surface">Surface</span>
+          </div>
+          <div class="w-12 h-12 rounded-full bg-frog text-abyss flex items-center justify-center mb-4 font-round font-bold">1</div>
+          <h3 class="font-round font-bold text-xl mb-2">Get a Solana Wallet</h3>
+          <p class="text-foam/75 leading-relaxed">Download <span class="text-frog">Phantom</span> or <span class="text-frog">Solflare</span>. This is your diving gear — you need it to hold SOL and $TOADWHALE.</p>
+        </article>
+
+        <article class="step-card glass rounded-3xl p-6 relative">
+          <div class="flex items-center justify-between mb-6">
+            <span class="step-num font-display text-4xl text-frog transition">02</span>
+            <span class="text-[11px] font-round tracking-widest uppercase text-surface">50m</span>
+          </div>
+          <div class="w-12 h-12 rounded-full bg-frog text-abyss flex items-center justify-center mb-4 font-round font-bold">2</div>
+          <h3 class="font-round font-bold text-xl mb-2">Load Up on SOL</h3>
+          <p class="text-foam/75 leading-relaxed">Buy SOL on any major exchange. Send it to your wallet. That’s the fuel that powers the deep dive.</p>
+        </article>
+
+        <article class="step-card glass rounded-3xl p-6 relative">
+          <div class="flex items-center justify-between mb-6">
+            <span class="step-num font-display text-4xl text-frog transition">03</span>
+            <span class="text-[11px] font-round tracking-widest uppercase text-surface">200m</span>
+          </div>
+          <div class="w-12 h-12 rounded-full bg-frog text-abyss flex items-center justify-center mb-4 font-round font-bold">3</div>
+          <h3 class="font-round font-bold text-xl mb-2">Open the Swap</h3>
+          <p class="text-foam/75 leading-relaxed">Hit <span class="text-frog">Buy Now</span> to open Pump.fun. Connect your wallet. You’re in Toad Whale waters now.</p>
+        </article>
+
+        <article class="step-card glass rounded-3xl p-6 relative">
+          <div class="flex items-center justify-between mb-6">
+            <span class="step-num font-display text-4xl text-frog transition">04</span>
+            <span class="text-[11px] font-round tracking-widest uppercase text-surface">Abyss</span>
+          </div>
+          <div class="w-12 h-12 rounded-full bg-frog text-abyss flex items-center justify-center mb-4 font-round font-bold">4</div>
+          <h3 class="font-round font-bold text-xl mb-2">Swap for $TOADWHALE</h3>
+          <p class="text-foam/75 leading-relaxed">Paste the CA if asked, pick your SOL amount, confirm the swap. Breach the surface with the pod.</p>
+        </article>
+      </div>
+
+      <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-frog rounded-2xl px-10 py-4 font-round font-bold text-lg">
+          Buy $TOADWHALE Now
+        </a>
+        <button id="copyBtn2" class="btn-chart rounded-2xl px-8 py-4 font-round font-bold text-lg" type="button">
+          Copy Contract
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="chart" class="relative py-20 md:py-28">
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-frog/40 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <p class="font-round text-frog tracking-[0.25em] uppercase text-xs mb-3">Sonar</p>
+          <h2 class="font-display text-3xl md:text-5xl title-glow">Live Chart</h2>
+          <p class="mt-3 text-foam/80 max-w-xl">Track the breach in real time. Dexscreener sonar for $TOADWHALE on Solana.</p>
+        </div>
+        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="btn-chart rounded-2xl px-6 py-3 font-round font-bold inline-flex items-center gap-2 w-fit">
+          Open Dexscreener
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+
+      <div class="sonar-frame rounded-3xl overflow-hidden p-2 md:p-3">
+        <div class="rounded-2xl overflow-hidden bg-abyss h-[420px] md:h-[560px]">
+          <iframe
+            title="Dexscreener chart for TOADWHALE"
+            src="https://dexscreener.com/solana/TBA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"
+            class="w-full h-full border-0"
+            allow="clipboard-write"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="relative py-20 md:py-28">
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-frog/40 to-transparent"></div>
+    <div class="max-w-5xl mx-auto px-4 md:px-6 text-center">
+      <p class="font-round text-frog tracking-[0.25em] uppercase text-xs mb-3">Join the Pod</p>
+      <h2 class="font-display text-3xl md:text-5xl title-glow mb-4">Swim With Us</h2>
+      <p class="text-foam/80 text-lg max-w-2xl mx-auto mb-12">
+        The ocean is big. The memes are bigger. Plug into Telegram and X and ride every breach with the Toad Whale crew.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <a href="https://t.me/ToadWhaleSol" target="_blank" rel="noopener noreferrer" class="glass rounded-3xl p-8 hover:border-frog/50 hover:-translate-y-1 transition flex flex-col items-center gap-4">
+          <img src="tg.png" alt="Telegram" class="w-20 h-20 rounded-full shadow-glowsm" />
+          <h3 class="font-round font-bold text-2xl">Telegram</h3>
+          <p class="text-foam/70">t.me/ToadWhaleSol</p>
+          <span class="text-frog font-round font-semibold">Jump in →</span>
+        </a>
+        <a href="https://x.com/ToadWhaleSol" target="_blank" rel="noopener noreferrer" class="glass rounded-3xl p-8 hover:border-frog/50 hover:-translate-y-1 transition flex flex-col items-center gap-4">
+          <img src="x.png" alt="X / Twitter" class="w-20 h-20 rounded-full object-cover shadow-glowsm" />
+          <h3 class="font-round font-bold text-2xl">Twitter / X</h3>
+          <p class="text-foam/70">x.com/ToadWhaleSol</p>
+          <span class="text-frog font-round font-semibold">Follow the splash →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="relative pt-16 pb-28 md:pb-12">
+    <svg class="absolute top-0 left-0 w-full" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#011018" d="M0,32 C240,80 480,0 720,32 C960,64 1200,8 1440,40 L1440,0 L0,0 Z"></path>
+    </svg>
+    <div class="max-w-7xl mx-auto px-4 md:px-6 relative">
+      <div class="glass rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+        <img src="logo.png" alt="Toad Whale" class="w-20 h-20 rounded-full object-cover porthole" />
+        <div class="text-center md:text-left flex-1">
+          <p class="font-display text-2xl title-glow">TOAD WHALE</p>
+          <p class="text-foam/70 mt-1">Giant frog vibes. Ocean-sized memes. Unstoppable Solana energy.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://t.me/ToadWhaleSol" target="_blank" rel="noopener noreferrer"><img src="tg.png" alt="Telegram" class="w-11 h-11 rounded-full hover:scale-110 transition" /></a>
+          <a href="https://x.com/ToadWhaleSol" target="_blank" rel="noopener noreferrer"><img src="x.png" alt="X" class="w-11 h-11 rounded-full object-cover hover:scale-110 transition" /></a>
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-frog rounded-full px-5 py-2 font-round font-bold text-sm">Buy Now</a>
+        </div>
+      </div>
+      <p class="text-center text-xs text-foam/40 mt-8 max-w-3xl mx-auto leading-relaxed">
+        $TOADWHALE is a meme coin created for entertainment. It has no intrinsic value and no expectation of financial return.
+        Crypto is volatile. Do your own research. Not financial advice.
+      </p>
+      <p class="text-center text-foam/30 text-xs mt-3">© 2026 Toad Whale · $TOADWHALE · Solana</p>
+    </div>
+  </footer>
+
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden p-3">
+    <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-frog w-full rounded-2xl py-3 font-round font-bold text-center block">
+      Buy Now
+    </a>
+  </div>
+
+  <div id="toast" class="toast fixed bottom-24 md:bottom-8 left-1/2 -translate-x-1/2 z-50 glass rounded-full px-5 py-3 font-round font-semibold text-frog shadow-glowsm whitespace-nowrap">
+    CA copied to clipboard
+  </div>
+
+  <script>
+    const CA = "TBA";
+
+    function copyCA() {
+      const done = () => {
+        const toast = document.getElementById("toast");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(CA).then(done).catch(() => fallbackCopy(done));
+      } else {
+        fallbackCopy(done);
+      }
+    }
+
+    function fallbackCopy(done) {
+      const el = document.createElement("textarea");
+      el.value = CA;
+      document.body.appendChild(el);
+      el.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(el);
+      done();
+    }
+
+    document.getElementById("copyBtn").addEventListener("click", copyCA);
+    document.getElementById("copyBtn2").addEventListener("click", copyCA);
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+    mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => mobileMenu.classList.add("hidden")));
+
+    const nav = document.getElementById("nav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 20);
+    });
+
+    const bubbleRoot = document.getElementById("bubbles");
+    for (let i = 0; i < 22; i++) {
+      const b = document.createElement("span");
+      b.className = "bubble";
+      const size = 6 + Math.random() * 22;
+      b.style.width = size + "px";
+      b.style.height = size + "px";
+      b.style.left = Math.random() * 100 + "%";
+      b.style.animationDuration = 8 + Math.random() * 16 + "s";
+      b.style.animationDelay = Math.random() * 12 + "s";
+      bubbleRoot.appendChild(b);
+    }
+  </script>
+</body>
+</html>
