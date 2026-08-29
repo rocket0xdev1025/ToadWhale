@@ -167,11 +167,11 @@
     }
 
     .title-glow {
-      background: linear-gradient(180deg, #f4ffe8 0%, #8be14a 48%, #4db8e8 100%);
+      background: linear-gradient(180deg, #f7ffe9 0%, #8be14a 52%, #4db8e8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      filter: drop-shadow(0 8px 24px rgba(139, 225, 74, 0.35));
+      filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.85)) drop-shadow(0 10px 22px rgba(139, 225, 74, 0.4));
     }
 
     .porthole {
@@ -210,9 +210,9 @@
     }
 
     .btn-chart {
-      background: linear-gradient(180deg, rgba(26, 160, 214, 0.35), rgba(8, 50, 80, 0.7));
+      background: linear-gradient(180deg, rgba(26, 160, 214, 0.45), rgba(8, 50, 80, 0.85));
       border: 2px solid rgba(139, 225, 74, 0.55);
-      color: #e9f8ff;
+      color: #e9f8ff !important;
       box-shadow: 0 8px 0 #0a3a58, 0 12px 28px rgba(0, 40, 80, 0.4);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
@@ -262,18 +262,6 @@
       opacity: 1;
     }
 
-    .whale-sil {
-      animation: whalePass 32s linear infinite;
-    }
-
-    @keyframes whalePass {
-      0% { transform: translateX(-20%) translateY(0); opacity: 0; }
-      8% { opacity: 0.18; }
-      50% { transform: translateX(40vw) translateY(-12px); opacity: 0.22; }
-      92% { opacity: 0.12; }
-      100% { transform: translateX(110vw) translateY(8px); opacity: 0; }
-    }
-
     .nav-link {
       position: relative;
     }
@@ -302,7 +290,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .swim, .float-slow, .rays, .caustics, .marquee-track, .bubble, .pulse-ring, .whale-sil {
+      .swim, .float-slow, .rays, .caustics, .marquee-track, .bubble, .pulse-ring {
         animation: none !important;
       }
     }
@@ -312,15 +300,10 @@
   <div id="bubbles" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
   <div class="grain fixed inset-0 z-0"></div>
 
-  <svg class="whale-sil fixed top-[38%] w-64 md:w-96 text-white z-0 pointer-events-none" viewBox="0 0 240 90" fill="currentColor" aria-hidden="true">
-    <path d="M12 52c18-22 48-34 86-32 28 1 48 10 72 8 14-1 28-8 42-6-8 10-8 20 2 30-16 2-30-4-46-2-22 3-38 14-64 16-30 3-62-2-86-10 4-6 2-10-6-14z"/>
-    <circle cx="38" cy="44" r="3"/>
-  </svg>
-
   <nav id="nav" class="glass-nav fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3 group">
-        <img src="logo.png" alt="Toad Whale logo" class="w-12 h-12 rounded-full object-cover porthole-sm ring-2 ring-frog shadow-glowsm" />
+        <img src="logo.png" alt="Toad Whale logo" class="w-12 h-12 rounded-full object-cover ring-2 ring-frog shadow-glowsm" />
         <div class="leading-tight">
           <p class="font-display text-sm md:text-base tracking-wide text-foam">TOAD WHALE</p>
           <p class="text-[11px] font-round text-frog">$TOADWHALE</p>
@@ -364,54 +347,45 @@
     </div>
   </nav>
 
-  <header id="top" class="relative min-h-screen flex items-end md:items-center pt-24 pb-16 overflow-hidden">
-    <img src="banner.jpg" alt="Toad Whale swimming through a coral reef" class="absolute inset-0 w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-gradient-to-r from-abyss/85 via-abyss/55 to-abyss/30"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-abyss via-abyss/40 to-transparent"></div>
+  <header id="top" class="relative min-h-[100svh] flex items-end pt-24 pb-28 md:pb-20 overflow-hidden">
+    <img src="banner.jpg" alt="Toad Whale swimming through a coral reef" class="absolute inset-0 w-full h-full object-cover object-[center_35%]" />
+    <div class="absolute inset-0 bg-gradient-to-t from-abyss via-abyss/55 to-abyss/15"></div>
     <div class="rays absolute inset-0"></div>
     <div class="caustics absolute inset-0"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 w-full grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <div class="inline-flex items-center gap-2 rounded-full border border-frog/40 bg-abyss/40 px-3 py-1 mb-5 backdrop-blur-sm">
-          <span class="w-2 h-2 rounded-full bg-frog animate-pulse"></span>
-          <span class="text-xs font-round tracking-widest uppercase text-frog">Live on Solana</span>
-        </div>
-        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] title-glow mb-4">
-          TOAD<br />WHALE
-        </h1>
-        <p class="inline-block font-round font-semibold text-frog bg-frog/10 border border-frog/30 rounded-full px-4 py-1 mb-5 tracking-widest">
-          $TOADWHALE
-        </p>
-        <p class="text-lg md:text-xl text-foam/90 max-w-xl leading-relaxed mb-8">
-          Toad Whale brings giant frog vibes, ocean-sized memes, and unstoppable Solana energy.
-        </p>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 w-full text-center md:text-left">
+      <div class="inline-flex items-center gap-2 rounded-full border border-frog/40 bg-abyss/50 backdrop-blur-sm px-3 py-1 mb-5">
+        <span class="w-2 h-2 rounded-full bg-frog animate-pulse"></span>
+        <span class="text-xs font-round tracking-widest uppercase text-frog">Live on Solana</span>
+      </div>
+      <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl leading-[1.02] title-glow mb-4 drop-shadow-lg">
+        TOAD<br />WHALE
+      </h1>
+      <p class="inline-block font-round font-semibold text-frog bg-frog/15 border border-frog/40 rounded-full px-4 py-1 mb-5 tracking-widest">
+        $TOADWHALE
+      </p>
+      <p class="text-lg md:text-2xl text-foam max-w-3xl leading-relaxed mb-8 mx-auto md:mx-0" style="text-shadow: 0 2px 16px rgba(0,0,0,0.85);">
+        Toad Whale brings giant frog vibes, ocean-sized memes, and unstoppable Solana energy.
+      </p>
 
-        <div class="glass rounded-2xl p-3 sm:p-4 mb-8 max-w-xl">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-frog/80 font-round mb-2">Contract Address</p>
-          <div class="flex items-center gap-2">
-            <code id="caText" class="flex-1 font-mono text-sm sm:text-base text-foam break-all">TBA</code>
-            <button id="copyBtn" class="shrink-0 btn-frog rounded-xl px-3 py-2 font-round font-bold text-xs sm:text-sm flex items-center gap-1.5" type="button">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke-width="2"/></svg>
-              Copy CA
-            </button>
-          </div>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-frog rounded-2xl px-8 py-4 font-round font-bold text-lg text-center">
-            Buy Now
-          </a>
-          <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="btn-chart rounded-2xl px-8 py-4 font-round font-bold text-lg text-center">
-            Chart
-          </a>
+      <div class="glass rounded-2xl p-3 sm:p-4 mb-8 max-w-xl mx-auto md:mx-0">
+        <p class="text-[11px] uppercase tracking-[0.2em] text-frog/80 font-round mb-2">Contract Address</p>
+        <div class="flex items-center gap-2">
+          <code id="caText" class="flex-1 font-mono text-sm sm:text-base text-foam break-all">TBA</code>
+          <button id="copyBtn" class="shrink-0 btn-frog rounded-xl px-3 py-2 font-round font-bold text-xs sm:text-sm flex items-center gap-1.5" type="button">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke-width="2"/></svg>
+            Copy CA
+          </button>
         </div>
       </div>
 
-      <div class="relative flex justify-center md:justify-end">
-        <div class="absolute w-72 h-72 md:w-[420px] md:h-[420px] rounded-full bg-frog/20 blur-3xl"></div>
-        <div class="absolute w-80 h-80 md:w-[380px] md:h-[380px] rounded-full border border-frog/20 pulse-ring"></div>
-        <img src="logo.png" alt="Toad Whale mascot" class="relative w-64 sm:w-80 md:w-[380px] rounded-full object-cover porthole swim" />
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="btn-frog rounded-2xl px-8 py-4 font-round font-bold text-lg text-center">
+          Buy Now
+        </a>
+        <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="btn-chart rounded-2xl px-8 py-4 font-round font-bold text-lg text-center">
+          Chart
+        </a>
       </div>
     </div>
   </header>
@@ -435,12 +409,23 @@
 
   <section id="about" class="relative py-20 md:py-28">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
-      <div class="text-center mb-14">
-        <p class="font-round text-frog tracking-[0.25em] uppercase text-xs mb-3">The Legend</p>
-        <h2 class="font-display text-3xl md:text-5xl title-glow">Meet the Pod Leader</h2>
-        <p class="mt-4 max-w-2xl mx-auto text-foam/80 text-lg">
-          Not a fish. Not just a frog. A deep-sea meme leviathan born to breach the charts.
-        </p>
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="relative flex justify-center">
+          <div class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-frog/20 blur-3xl"></div>
+          <div class="absolute w-64 h-64 md:w-80 md:h-80 rounded-full border border-frog/25 pulse-ring"></div>
+          <img src="logo.png" alt="Toad Whale mascot" class="relative w-64 sm:w-80 md:w-[360px] rounded-full object-cover porthole swim" />
+        </div>
+        <div>
+          <p class="font-round text-frog tracking-[0.25em] uppercase text-xs mb-3">The Legend</p>
+          <h2 class="font-display text-3xl md:text-5xl title-glow">Meet the Pod Leader</h2>
+          <p class="mt-5 text-foam/85 text-lg leading-relaxed">
+            Not a fish. Not just a frog. A deep-sea meme leviathan born to breach the charts.
+            Toad Whale brings giant frog vibes, ocean-sized memes, and unstoppable Solana energy.
+          </p>
+          <p class="mt-4 text-foam/70 leading-relaxed">
+            The face that launched a thousand memes now wears a whale’s body and hunts green candles in the Solana deep.
+          </p>
+        </div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
@@ -502,42 +487,50 @@
       </div>
 
       <div class="grid md:grid-cols-4 gap-6">
-        <article class="step-card glass rounded-3xl p-6 relative md:depth-line">
-          <div class="flex items-center justify-between mb-6">
+        <article class="step-card glass rounded-3xl p-6 relative">
+          <div class="flex items-center justify-between mb-5">
             <span class="step-num font-display text-4xl text-frog transition">01</span>
             <span class="text-[11px] font-round tracking-widest uppercase text-surface">Surface</span>
           </div>
-          <div class="w-12 h-12 rounded-full bg-frog text-abyss flex items-center justify-center mb-4 font-round font-bold">1</div>
+          <div class="w-12 h-12 rounded-2xl bg-frog/15 border border-frog/30 flex items-center justify-center mb-4 text-frog">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M4 7h16v12H4zM8 7V5a4 4 0 0 1 8 0v2"/></svg>
+          </div>
           <h3 class="font-round font-bold text-xl mb-2">Get a Solana Wallet</h3>
           <p class="text-foam/75 leading-relaxed">Download <span class="text-frog">Phantom</span> or <span class="text-frog">Solflare</span>. This is your diving gear — you need it to hold SOL and $TOADWHALE.</p>
         </article>
 
         <article class="step-card glass rounded-3xl p-6 relative">
-          <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center justify-between mb-5">
             <span class="step-num font-display text-4xl text-frog transition">02</span>
             <span class="text-[11px] font-round tracking-widest uppercase text-surface">50m</span>
           </div>
-          <div class="w-12 h-12 rounded-full bg-frog text-abyss flex items-center justify-center mb-4 font-round font-bold">2</div>
+          <div class="w-12 h-12 rounded-2xl bg-frog/15 border border-frog/30 flex items-center justify-center mb-4 text-frog">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.8H22l-5.6 4.2 2.2 6.8L12 16.6 5.4 19.8l2.2-6.8L2 8.8h7.6z"/></svg>
+          </div>
           <h3 class="font-round font-bold text-xl mb-2">Load Up on SOL</h3>
           <p class="text-foam/75 leading-relaxed">Buy SOL on any major exchange. Send it to your wallet. That’s the fuel that powers the deep dive.</p>
         </article>
 
         <article class="step-card glass rounded-3xl p-6 relative">
-          <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center justify-between mb-5">
             <span class="step-num font-display text-4xl text-frog transition">03</span>
             <span class="text-[11px] font-round tracking-widest uppercase text-surface">200m</span>
           </div>
-          <div class="w-12 h-12 rounded-full bg-frog text-abyss flex items-center justify-center mb-4 font-round font-bold">3</div>
+          <div class="w-12 h-12 rounded-2xl bg-frog/15 border border-frog/30 flex items-center justify-center mb-4 text-frog">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M7 7h10l3 5-3 5H7l-3-5 3-5zM9 12h6"/></svg>
+          </div>
           <h3 class="font-round font-bold text-xl mb-2">Open the Swap</h3>
           <p class="text-foam/75 leading-relaxed">Hit <span class="text-frog">Buy Now</span> to open Pump.fun. Connect your wallet. You’re in Toad Whale waters now.</p>
         </article>
 
         <article class="step-card glass rounded-3xl p-6 relative">
-          <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center justify-between mb-5">
             <span class="step-num font-display text-4xl text-frog transition">04</span>
             <span class="text-[11px] font-round tracking-widest uppercase text-surface">Abyss</span>
           </div>
-          <div class="w-12 h-12 rounded-full bg-frog text-abyss flex items-center justify-center mb-4 font-round font-bold">4</div>
+          <div class="w-12 h-12 rounded-2xl bg-frog/15 border border-frog/30 flex items-center justify-center mb-4 text-frog">
+            <svg class="w-7 h-6" viewBox="0 0 24 16" fill="currentColor"><path d="M1 9c2-4 6-6 11-6 4 0 7 1.5 10 1-1 2-1 4 .4 6-2 .3-4.2-.6-6.4-.3-3 .4-5.4 2-9 2.3C4 12.2 1.6 11.2 1 9z"/><circle cx="5.5" cy="8" r=".8"/></svg>
+          </div>
           <h3 class="font-round font-bold text-xl mb-2">Swap for $TOADWHALE</h3>
           <p class="text-foam/75 leading-relaxed">Paste the CA if asked, pick your SOL amount, confirm the swap. Breach the surface with the pod.</p>
         </article>
@@ -570,11 +563,17 @@
       </div>
 
       <div class="sonar-frame rounded-3xl overflow-hidden p-2 md:p-3">
-        <div class="rounded-2xl overflow-hidden bg-abyss h-[420px] md:h-[560px]">
+        <div class="relative rounded-2xl overflow-hidden bg-abyss h-[420px] md:h-[560px]">
+          <div class="absolute inset-0 flex items-center justify-center text-center px-6">
+            <div>
+              <p class="font-display text-xl text-frog mb-2">DEXSCREENER</p>
+              <p class="text-foam/60 text-sm">Live $TOADWHALE chart embeds here once the pair is live.</p>
+            </div>
+          </div>
           <iframe
             title="Dexscreener chart for TOADWHALE"
             src="https://dexscreener.com/solana/TBA?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartDefaultOnMobile=1&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"
-            class="w-full h-full border-0"
+            class="relative w-full h-full border-0"
             allow="clipboard-write"
           ></iframe>
         </div>
@@ -646,11 +645,21 @@
   <script>
     const CA = "TBA";
 
-    function copyCA() {
+    function copyCA(btn) {
       const done = () => {
         const toast = document.getElementById("toast");
         toast.classList.add("show");
-        setTimeout(() => toast.classList.remove("show"), 1800);
+        if (btn) {
+          const prev = btn.innerHTML;
+          btn.dataset.prev = btn.dataset.prev || prev;
+          btn.textContent = "Copied!";
+          setTimeout(() => {
+            btn.innerHTML = btn.dataset.prev;
+            toast.classList.remove("show");
+          }, 1800);
+        } else {
+          setTimeout(() => toast.classList.remove("show"), 1800);
+        }
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(CA).then(done).catch(() => fallbackCopy(done));
@@ -669,8 +678,8 @@
       done();
     }
 
-    document.getElementById("copyBtn").addEventListener("click", copyCA);
-    document.getElementById("copyBtn2").addEventListener("click", copyCA);
+    document.getElementById("copyBtn").addEventListener("click", (e) => copyCA(e.currentTarget));
+    document.getElementById("copyBtn2").addEventListener("click", (e) => copyCA(e.currentTarget));
 
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
